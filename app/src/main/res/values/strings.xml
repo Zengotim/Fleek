@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Fleek</string>
+    <string name="action_settings">Settings</string>
+    <string name="subtitle">Hip-hop Stations</string>
+    <string name="station_title">Station Title</string>
+    <string name="station_subtitle">Station Subtitle</string>
+    <string name="url_error">Oh No! That Station Didn\'t Load!</string>
+    <string name="ad_description">Ad support - We like to eat too!</string>
+    <string name="icon_description">Station Icon</string>
+    <string name="splash_description">TK-Squared Logo</string>
+    <string name="mmedia_apid">220168</string>
+    <string name="menu_fetch_title">Check For new List</string>
+    <string name="menu_edit_title">Edit List</string>
+    <string name="menu_about_title">About Fleek</string>
+    <string name="skip_login">Skip</string>
+    <string name="web_page_title">Fleek Main Page</string>
+    <string name="web_page_url">http://www.tk-squared.com/Fleek</string>
+    <string name="deep_url">android-app://com.tk_squared.fleek/http/www.tk-squared.com/Fleek</string>
+    <string name="app_id_string">com.tk_squared.fleek</string>
+    <string name="app_icon_url">http://www.tk-squared.com/Fleek/fleek_icon.png</string>
+    <string name="facebook_app_id">474926612712641</string>
+</resources>
