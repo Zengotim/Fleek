@@ -383,7 +383,7 @@ public class TkkActivity extends AppCompatActivity
         try {
             // NOTE: The ad container argument passed to the createInstance call should be the
             // view container that the ad content will be injected into.
-            InlineAd inlineAd = InlineAd.createInstance("220168",
+            InlineAd inlineAd = InlineAd.createInstance("220263",
                     (LinearLayout) findViewById(R.id.ad_container));
             final InlineAd.InlineAdMetadata inlineAdMetadata = new InlineAd.InlineAdMetadata().
                     setAdSize(InlineAd.AdSize.BANNER);
