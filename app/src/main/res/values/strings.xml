@@ -19,4 +19,6 @@
     <string name="app_id_string">com.tk_squared.fleek</string>
     <string name="app_icon_url">http://www.tk-squared.com/Fleek/fleek_icon.png</string>
     <string name="facebook_app_id">474926612712641</string>
+    <string name="stations_list_url">http://tk-squared.com/Bong/stations.json</string>
+    <string name="server_list_version">bong_server_version.txt</string>
 </resources>
