@@ -1,37 +1,36 @@
 package com.tk_squared.fleek;
 
-
 import android.app.Fragment;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.drawable.BitmapDrawable;
-import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
 public class TkkListViewFragment extends Fragment implements RearrangeableListView.RearrangeListener{
 
     //region Description: variables and Interface declarations
     private RearrangeableListView listView;
-        public RearrangeableListView getListView(){return listView;}
+    public RearrangeableListView getListView(){return listView;}
     private int position;
-    public Callbacks callbacks;
+    private Callbacks callbacks;
 
     //Interface for handling fragment change on selection
     public interface Callbacks{
         void onStationSelected(tkkStation station);
     }
 
-    public TkkListViewFragment() {
-    }
+    public TkkListViewFragment() {}
     //endregion
 
     //region Desc: RearrangeableListView Listener interface methods
@@ -83,7 +82,7 @@ public class TkkListViewFragment extends Fragment implements RearrangeableListVi
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         final TkkActivity tkkActivity = (TkkActivity)getActivity();
-        listView = (RearrangeableListView) getView().findViewById(R.id.list);
+        listView = (RearrangeableListView) getActivity().findViewById(R.id.list);
         if (listView == null){
             listView = new RearrangeableListView(getActivity());
         }
@@ -104,7 +103,9 @@ public class TkkListViewFragment extends Fragment implements RearrangeableListVi
             }
         });
         Toolbar toolbar = (Toolbar) tkkActivity.findViewById(R.id.toolbar);
-        toolbar.setSubtitle(R.string.subtitle);
+        if (toolbar != null){
+            toolbar.setSubtitle(R.string.subtitle);
+        }
         tkkActivity.setSupportActionBar(toolbar);
     }
     //endregion
@@ -114,7 +115,7 @@ public class TkkListViewFragment extends Fragment implements RearrangeableListVi
 
         //region Description: variables and Constructor
         private boolean showDelete = true;
-            public void setShowDelete(boolean show) {showDelete = show;}
+        public void setShowDelete(boolean show) {showDelete = show;}
 
         public StationAdapter(Context context, ArrayList<tkkStation> list){
             super(context, 0, list);
@@ -150,11 +151,32 @@ public class TkkListViewFragment extends Fragment implements RearrangeableListVi
             deleteButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ((TkkActivity) getActivity()).getData().removeStationAt(position);
-                    notifyDataSetChanged();
+                    confirmDialog(position);
                 }
             });
             return view;
+        }
+
+        private void confirmDialog(final Integer position){
+            AlertDialog.Builder cDialog = new AlertDialog.Builder((getContext()));
+            cDialog
+                    .setMessage("delete " +
+                            ((TkkActivity) getActivity())
+                                    .getData().getStationAt(position).getName() + "?")
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener(){
+                        @Override
+                        public void onClick(DialogInterface dialog, int id){
+                            ((TkkActivity) getActivity()).getData().removeStationAt(position);
+                            ((ArrayAdapter)listView.getAdapter()).notifyDataSetChanged();
+                        }
+                    })
+                    .setNegativeButton("No", new DialogInterface.OnClickListener(){
+                        @Override
+                        public void onClick(DialogInterface dialog, int id){
+                            //foregetaboutit
+                        }
+                    })
+                    .show();
         }
     }
 }
