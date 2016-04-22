@@ -82,7 +82,6 @@ public class tkkDataMod {
 
                     this.jsons = new JSONArray(this.body);
 
-
                     if (!vFile.exists()) {
                         if (vFile.createNewFile()) {
                             Log.i("#STATIONSJSON#", "Need to create local stations.json");

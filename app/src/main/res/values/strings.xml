@@ -20,7 +20,7 @@
     <string name="web_page_url">http://www.tk-squared.com/Fleek</string>
     <string name="app_id_string">com.tk_squared.fleek</string>
     <string name="app_icon_url">http://www.tk-squared.com/Fleek/fleek_icon.png</string>
-    <string name="stations_list_url">http://tk-squared.com/Bong/stations_.json</string>
+    <string name="stations_list_url">http://tk-squared.com/Fleek/stations_.json</string>
     <integer name="about_screen_delay">8000</integer>
     <integer name="interstitial_reload_delay">60000</integer>
     <integer name="inline_ad_refresh_rate">30000</integer>
