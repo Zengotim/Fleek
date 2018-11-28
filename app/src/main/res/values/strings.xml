@@ -2,6 +2,7 @@
     <string name="disclaimer">NOTICE: Tk-Squared, LLC does not own, operate, or have any affiliation with the websites and radio streams available through the use of this app. Those sites/streams remain the property and responsibility of their respective owners and operators. Any requests for money are coming from website owners. This app is 100% free and TK-Squared, LLC will never ask you for money in this app.</string>
     <string name="app_name">Fleek</string>
     <string name="version_name">Version:  </string>
+    <string name="privacy_policy">Our privacy policy: https://tk-squared.com/Fleek/privacy.html</string>
     <string name="compile_date">Compiled on: </string>
     <string name="company">TK-Squared, LLC</string>
     <string name="subtitle">Hip-hop Stations</string>
@@ -18,10 +19,14 @@
     <string name="menu_fetch_title">Check For new List</string>
     <string name="menu_edit_title">Edit List</string>
     <string name="menu_about_title">About Fleek</string>
-    <string name="web_page_url">http://www.tk-squared.com/Fleek</string>
+    <string name="web_page_url">https://www.tk-squared.com/Fleek</string>
     <string name="app_id_string">com.tk_squared.fleek</string>
-    <string name="app_icon_url">http://www.tk-squared.com/Fleek/fleek_icon.png</string>
-    <string name="stations_list_url">http://tk-squared.com/Fleek/stations_.json</string>
+    <string name="app_icon_url">https://www.tk-squared.com/Fleek/fleek_icon.png</string>
+    <string name="stations_list_url">https://tk-squared.com/Fleek/stations_.json</string>
+    <integer name="smaato_pub_id">1100018452</integer>
+    <integer name="smaato_ad_id">130547424</integer>
+    <integer name="smaato_inter_id">130547425</integer>
+    <integer name="smaato_reload_delay">20</integer>
     <integer name="about_screen_delay">15000</integer>
     <integer name="interstitial_reload_delay">60000</integer>
     <integer name="inline_ad_refresh_rate">30000</integer>
